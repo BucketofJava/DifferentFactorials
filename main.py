@@ -37,6 +37,18 @@ def primorial(num):
   for i in util.sieveOfEratosthenes(num):
     finalnum*=i;
   return finalnum;
+def superFactorialSloane(num):
+  tennum=0;
+  finalnum=1;
+  print(finalnum)
+  for i in range(num):
+    print(num-i)
+    finalnum*=math.factorial(num-i)
+    tennumi=math.trunc(math.log(finalnum, 10));
+    tennum+=tennumi;
+    finalnum/=(10**tennumi);
+  string="{} * 10^{}".format(finalnum, tennum)
+  return finalnum, tennum, string;  
 def superFactorialPickover(num):
   tennum=math.trunc(math.log(num, 10))
   finalnum=num/(10**tennum);
@@ -56,4 +68,5 @@ print(nfactorial(45, 3))
 print(nfactorialefficient(45, 3))
 print(primorial(7))
 print(subfactorial(5))
+print(superFactorialSloane(5))
 
