@@ -60,8 +60,20 @@ def superFactorialPickover(num):
     finalnum/=(10**tennumi);
   string="{} * 10^{}".format(finalnum, tennum)
   return finalnum, tennum, string;
-#So that it doesnt get covered up by the little thing in the top right corner of the console output
-
+def exponentialFactorial(num):
+  tennum=0;
+  finalnum=num;
+  print(finalnum)
+  for i in range(num-1):
+    print(num-(i+1))
+    finalnum=finalnum**(num-(i+1))
+    tennum*=(num-(i+1));
+    tennumi=math.trunc(math.log(finalnum, 10));
+    tennum+=tennumi;
+    finalnum/=(10**tennumi);
+  string="{} * 10^{}".format(finalnum, tennum)
+  return finalnum, tennum, string;  
+#The new line is so that it doesnt get covered up by the little thing in the top right corner of the console output
 print("\n")
 print(superFactorialPickover(30))
 print(nfactorial(45, 3))
@@ -69,4 +81,5 @@ print(nfactorialefficient(45, 3))
 print(primorial(7))
 print(subfactorial(5))
 print(superFactorialSloane(5))
+print(exponentialFactorial(5))
 
