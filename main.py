@@ -40,9 +40,7 @@ def primorial(num):
 def superFactorialSloane(num):
   tennum=0;
   finalnum=1;
-  print(finalnum)
   for i in range(num):
-    print(num-i)
     finalnum*=math.factorial(num-i)
     tennumi=math.trunc(math.log(finalnum, 10));
     tennum+=tennumi;
@@ -63,9 +61,7 @@ def superFactorialPickover(num):
 def exponentialFactorial(num):
   tennum=0;
   finalnum=num;
-  print(finalnum)
   for i in range(num-1):
-    print(num-(i+1))
     finalnum=finalnum**(num-(i+1))
     tennum*=(num-(i+1));
     tennumi=math.trunc(math.log(finalnum, 10));
@@ -76,9 +72,7 @@ def exponentialFactorial(num):
 def hyperFactorial(num):
   tennum=0;
   finalnum=1;
-  print(finalnum)
   for i in range(num):
-    print(num-i)
     finalnum*=math.pow(num-i, num-i)
     tennumi=math.trunc(math.log(finalnum, 10));
     tennum+=tennumi;
@@ -87,12 +81,27 @@ def hyperFactorial(num):
   return finalnum, tennum, string;  
 #The new line is so that it doesnt get covered up by the little thing in the top right corner of the console output
 print("\n")
-print(superFactorialPickover(402))
-print(nfactorial(45, 3))
-print(nfactorialefficient(45, 3))
-print(primorial(7))
-print(subfactorial(5))
-print(superFactorialSloane(5))
-print(exponentialFactorial(5))
-print(hyperFactorial(5))
+print("Leave a blank to skip a function")
+nfactorialnum=input("Enter what number you would like to use\n for the n factorial function:  ")
+nfactorialnum2=input("Enter what number you would like to use\n as the number of exclamation points for the n factorial function:  ")
+if(nfactorialnum!=""):
+  print(nfactorialefficient(int(nfactorialnum), int(nfactorialnum2))[2])
+subfactorialnum=input("Enter what number you would like to use\n for the subfactorial function:  ")
+if(subfactorialnum!=""):
+  print(subfactorial(int(subfactorialnum)))
+primorialnum=input("Enter what number you would like to use\n for the primorial function:  ")
+if(primorialnum!=""):
+  print(primorial(int(primorialnum)))
+sloanesuperfactorialnum=input("Enter what number you would like to use\n for the sloane superfactorial function:  ")
+if(sloanesuperfactorialnum!=""):
+  print(superFactorialSloane(int(sloanesuperfactorialnum))[2])
+pickoversuperfactorialnum=input("Enter what number you would like to use\n for the pickover superfactorial function:  ")
+if(pickoversuperfactorialnum!=""):
+  print(superFactorialPickover(int(pickoversuperfactorialnum))[2])
+exposuperfactorialnum=input("Enter what number you would like to use\n for the exponential factorial function:  ")
+if(exposuperfactorialnum!=""):
+  print(exponentialFactorial(int(exposuperfactorialnum))[2])
+hypsuperfactorialnum=input("Enter what number you would like to use\n for the hyper factorial function:  ")
+if(hypsuperfactorialnum!=""):
+  print(hyperFactorial(int(hypsuperfactorialnum))[2])
 
