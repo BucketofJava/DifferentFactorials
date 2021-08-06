@@ -73,13 +73,26 @@ def exponentialFactorial(num):
     finalnum/=(10**tennumi);
   string="{} * 10^{}".format(finalnum, tennum)
   return finalnum, tennum, string;  
+def hyperFactorial(num):
+  tennum=0;
+  finalnum=1;
+  print(finalnum)
+  for i in range(num):
+    print(num-i)
+    finalnum*=math.pow(num-i, num-i)
+    tennumi=math.trunc(math.log(finalnum, 10));
+    tennum+=tennumi;
+    finalnum/=(10**tennumi);
+  string="{} * 10^{}".format(finalnum, tennum)
+  return finalnum, tennum, string;  
 #The new line is so that it doesnt get covered up by the little thing in the top right corner of the console output
 print("\n")
-print(superFactorialPickover(30))
+print(superFactorialPickover(402))
 print(nfactorial(45, 3))
 print(nfactorialefficient(45, 3))
 print(primorial(7))
 print(subfactorial(5))
 print(superFactorialSloane(5))
 print(exponentialFactorial(5))
+print(hyperFactorial(5))
 
